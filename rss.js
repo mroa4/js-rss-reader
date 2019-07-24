@@ -1,11 +1,9 @@
 const DOMPARSER = new DOMParser().parseFromString.bind(new DOMParser())
-/* Fetch URLs from JSON */
-fetch('urls.json').then((res) => {
-	res.text().then((data) => {
+res ="https://hacks.mozilla.org"
 		var frag = document.createDocumentFragment()
 		var hasBegun = true
-		JSON.parse(data).urls.forEach((u) => {
-			try {
+		u = "https://hacks.mozilla.org"
+		try {
 				var url = new URL(u)
 			}
 			catch (e) {
@@ -53,6 +51,3 @@ fetch('urls.json').then((res) => {
 					}).catch(() => console.error('Error in fetching the RSS feed'))
 				})
 			}).catch(() => console.error('Error in fetching the website'))
-		})
-	})
-}).catch(() => console.error('Error in fetching the URLs json'))
